@@ -33,5 +33,5 @@ getTstats = function(fit, trend = FALSE){
 	sgtilde <- sqrt((d0*s02+fit$df.residual*sg2)/(d0+fit$df.residual))
 	tt <- fit$coefficients/(sgtilde*fit$stdev.unscaled)
 	logfchange = fit$coefficients
-	return(list,tt=tt,logfchange=logfchange)
+	return(list(tt=tt,logfchange=logfchange))
 }

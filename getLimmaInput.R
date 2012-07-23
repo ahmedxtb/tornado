@@ -6,7 +6,8 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 	#dbfile and tablename are from table created with makeDb()
 	#adjustvars is either left null or is a matrix (nxp) of adjustment variables (SVA?)
 	#group is a length n 0/1 vector grouping the samples
-	
+	#colsubset gives the column indices of the input file of the samples you wish to include in analysis.	
+
 	require(Genominator)
 	require(limma)
 	tab = ExpData(dbfile, tablename)
@@ -14,6 +15,7 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 	N = length(pos)
 	
 	if(!is.null(colsubset)) tab = tab[,colsubset]
+	if(is.null(colsubset)) tab = tab[,-1] #pos is not part of analysis.
 	
 	# set up model matrix (we are regressing count on group plus optional adjustment variables)
 	if(!is.null(adjustvars)){
@@ -37,7 +39,7 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 		if(i!=lastloop) mymat <- tab[(chunksize*i+1):(chunksize*(i+1)),]
 		else mymat <- tab[(chunksize*i+1):N,]
 		mymat <- log2(mymat+0.5)
-	    mymat <- sweep(mymat,2,Biobase::rowMedians(t(mymat)))
+	        mymat <- sweep(mymat,2,Biobase::rowMedians(t(mymat)))
 		fit <- lmFit(mymat,x)
 		startind <- which(is.na(listsigma)==TRUE)[1]
 		endind <- startind+dim(mymat)[1]-1

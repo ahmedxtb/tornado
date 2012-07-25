@@ -15,7 +15,7 @@ get.numalts <- function(pctil,null.mean,null.sd,null.prop,vals,up = TRUE){
 	return(list(num=round(num.alts.above),val=cutoff.val))
 }
 
-find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
+find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals, verbose=F){
 	if(init.value<=0.5) stop("finding DE up quantile - init.value should be >0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEup values.
@@ -28,9 +28,9 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 			if(abs(pseq[counter]-pseq[counter-1])<1e-8) return(list(m=iter$val,p=pseq[counter]))
 		}
 		counter = counter+1
-		print(counter)
+		if(verbose) print(counter)
 		pseq[counter] = x
-		print(x)
+		if(verbose) print(x)
 		
 		if(iter$num > target){
 			history[counter] = 1
@@ -51,7 +51,7 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 		}
 }
 
-find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
+find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals, verbose=F){
 	if(init.value>=0.5) stop("finding DE down quantile - init.value should be <0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEdown values.
@@ -64,9 +64,9 @@ find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 			if(abs(pseq[counter]-pseq[counter-1])<1e-8) return(list(m=iter$val,p=pseq[counter]))
 		}
 		counter = counter+1
-		print(counter)
+		if(verbose) print(counter)
 		pseq[counter] = x
-		print(x)
+		if(verbose) print(x)
 		
 		if(iter$num > target){
 			history[counter] = 1

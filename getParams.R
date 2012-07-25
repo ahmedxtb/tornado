@@ -5,7 +5,7 @@
 
 source("~/Documents/hopkins/research/_ebHMM-Rfunctions/locfdrFit.R") 
 source("~/Documents/hopkins/research/_ebHMM-Rfunctions/paramHelpers.R")
-getParams <- function(tstats, plots=FALSE, plotfile=NULL, padnum=5)
+getParams <- function(tstats, plots=FALSE, plotfile=NULL, verbose=F)
 {
 	if(plots & !is.null(plotfile)) pdf(file=plotfile)
 	pi.z = sum(tstats==0)/length(tstats)
@@ -33,10 +33,10 @@ getParams <- function(tstats, plots=FALSE, plotfile=NULL, padnum=5)
 	pi.0 = pi.0.tmp*(1-pi.z)
 	pi.1 = 1-pi.z-pi.0
 	
-	message("starting DEup.mean...")
+	if(verbose) message("starting DEup.mean...")
 	u = find.mean.up(.99, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt)
 	DEup.mean = u$m
-	message("starting DEdown.mean...")
+	if(verbose) message("starting DEdown.mean...")
 	d = find.mean.down(.01, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt)
 	DEdown.mean = d$m
 	DEup.sd = find.sd(prev.p = u$p, found.mean = DEup.mean, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, up=TRUE)

@@ -3,8 +3,8 @@
 ## added better alternative parameter estimation 7/18/12
 ## alyssa frazee
 
-source("~/Documents/hopkins/research/_ebHMM-Rfunctions/locfdrFit.R") 
-source("~/Documents/hopkins/research/_ebHMM-Rfunctions/paramHelpers.R")
+source("~/Documents/hopkins/research/_readlets/tornado/locfdrFit.R") 
+source("~/Documents/hopkins/research/_readlets/tornado/paramHelpers.R")
 getParams <- function(tstats, plots=FALSE, plotfile=NULL, verbose=F)
 {
 	if(plots & !is.null(plotfile)) pdf(file=plotfile)

@@ -333,6 +333,7 @@ locfdrFit <- function (zz, bre = 120, df = 7, pct = 0, pct0 = 1/4, nulltype = 1,
     }
     if(nulltype==0) nulldens <- p0theo*f00
     else nulldens <- p0*f0
+    yt <- pmax(yall * (1 - fd), 0)
     if (plot > 0) {
         if (plot == 2 | plot == 3) 
             oldpar <- par(mfrow = c(1, 2), pty = "m")

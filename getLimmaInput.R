@@ -24,7 +24,7 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
  		  eval(parse(text=paste("av",i," <- adjustvars[,",i,"]",sep="")))
 		  string1 = paste(string1,paste("av",i,sep=""),sep="+")
 		}
-		eval(parse(text=paste("x = model.matrix(~group",stringarg,")",sep="")))
+		eval(parse(text=paste("x = model.matrix(~group",string1,")",sep="")))
 	}else{x = model.matrix(~group)}
 	
 	# set up empty vectors we need to fill

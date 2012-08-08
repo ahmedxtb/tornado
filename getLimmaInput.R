@@ -2,12 +2,19 @@
 ## database file (containing filtered coverage) --> precursors to eBayes/getting moderated t-statistics.
 ## i.e. in pipeline: this goes after makeDb.R, before getTstats.R
 
+## getLimmaInput()
+## arguments:
+## --dbfile: string giving location of .db file (usually created with makeDb()) containing the data
+## --tablename: name of table in the .db file (usually created with makeDb())
+## (note: dbfile and tablename arguments in makeDb() and this function should match)
+## --adjustvars: if desired, an nxp matrix of adjustment variables (confounders, SVA output, etc.)
+## --group: a length n 0/1 vector grouping the samples (currently only handles 2 groups)
+## --colsubset: if desired, column indices of the input file of the samples you wish to include in analysis
+## return:
+## a list containing elements $ebobject, which is a list mimicking the output of running lmFit on the whole dataset,
+## and $pos, giving the row indices of all the positions on the chromosome passing the filtering criterion (i.e. bases with nontrivial coverage)
+## usage recommendataion: run getLimmaInput(), pass $ebobject to getTstats(), save $pos as rda file in case it is needed later
 getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize = 100000, colsubset = NULL){
-	#dbfile and tablename are from table created with makeDb()
-	#adjustvars is either left null or is a matrix (nxp) of adjustment variables (SVA?)
-	#group is a length n 0/1 vector grouping the samples
-	#colsubset gives the column indices of the input file of the samples you wish to include in analysis.	
-
 	require(Genominator)
 	require(limma)
 	tab = ExpData(dbfile, tablename)
@@ -55,5 +62,4 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 	
 } #end function
 
-# recommendation: pass ebobject to getTstats(), save pos as rda file to use later.
 

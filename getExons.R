@@ -1,7 +1,16 @@
 # function connecting DE regions to reference annotation
 # AF, June 7 2012, updated 7/23/12
 
-
+## getExons()
+## arguments:
+## --region: vector of length 3 containing a chromosome, start, and end - used to declare a region (usually a DER of interest) you would like to connect to annotated exons.  
+## --region (cont): example: region=c("chr22",2948173,2948273).  Note that chromosomes should be named as they are in the annotation provided (as the annotation argument).
+## --annotation: a data frame containing annotated exon information for your genome (one row per exon). Must contain columns named chr, start, and end.
+## --annotation (cont): users can get an annotation to use with the getAnnotation() function
+## --verbose: if TRUE, prints messages upon return about whether region was in an exon or not.
+## return:
+## a list with elements $region (containing the supplied region vector) and
+## $closestExons, a data frame consisting of rows of annotation corresponding to either the exon that overlaps region, or the closest exons (one each side) of region, if it does not fall into an annotation exon
 getExons <- function(region,annotation,verbose=TRUE) {
 	if(!is.vector(region)) stop("region must be a vector (chr, start, end)")
 	if(length(region)!=3) stop("region must be a vector of length 3 (chr, start, end)")

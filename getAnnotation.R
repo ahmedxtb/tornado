@@ -2,6 +2,9 @@
 # annotation file = table of exons.
 # AF 
 
+## supportedTables():
+## arguments - genome: UCSC genome name (in string format)
+## output - prints the tables that can be downloaded (i.e., supplied to getAnnotation) for the supplied genome.
 supportedTables <- function(genome){
 	message("getting supported tables. may take several minutes.")
 	require(GenomicFeatures)
@@ -9,6 +12,16 @@ supportedTables <- function(genome){
 	intersect(genome.tracks,rownames(supportedUCSCtables()))
 	}
 
+
+## getAnnotation(): 
+## arguments - 
+## --genome: UCSC genome name (in string format)
+## --tablename: the table to download from UCSC.  Can see supported tables from a given genome using supportedTables()
+## --genes: if TRUE, exons in the output are labeled by gene, otherwise exons are labeled by transcript
+## --verbose: if TRUE, messages are printed as the function runs.
+## output - if genes is TRUE, a data frame containing one row per exon with exon information for the given genome
+## output - if genes is FALSE, a list with elements $datf (the exon table, same as if genes is TRUE)
+## and $transcript.names, a named character vector where the names are internal transcript IDs and the elements are external transcript names
 getAnnotation <- function(genome, tablename, genes = TRUE, verbose = TRUE){
 	require(GenomicFeatures)
 	require(rtracklayer)

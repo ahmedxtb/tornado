@@ -3,8 +3,35 @@
 ## includes plotRegion, plotExon, and plotGene
 
 # currently, not a lot of plotting arguments are available here - add flexibility later?
-# note: "chromosome" should be an argument specifying which chromosome your region is in, IN THE FORMAT OF THE "chr" COLUMN IN WHATEVER YOU PROVIDE AS YOUR ANNOTATION ARGUMENT
 # only tested with already-loaded matrix (haven't tried reading from file or database yet) 7.23.12
+
+## plotRegion():
+## arguments:
+## --getRegionObject: output from getRegions (list contatining $states and $states.norle)
+## --ind: index of the region in getRegionObject$states that you're interested in plotting
+## --tstats: vector of t-statistics used in getRegions
+## --pos: vector of positions corresponding to tstats
+## --annotation: data frame containing exon annotation to use (see getAnnotation)
+## --counts: raw data used in getting the t-statistics. this can be either a string indicating the .db file created with makeDb, 
+## --counts(cont): ...a string indicating the location of a text file containing coverage (probably not a good option, since the raw matrix probably won't have the zero-rows removed)
+## --counts(cont): ...or an already-loaded matrix containing the raw data.
+## --counts(cont): NOTE that count must have the same number of rows as the # of elements in tstats and pos, and the rows must correspond to pos.
+## --group: a vector containing the group labels for the columns of counts. Only 2 groups are permitted at this time.
+## --bppad: the number of bases to plot outside of the designated region (default 50).  Essentially, use this to "zoom" in (decrease bppad) or out (increase bppad) on the region.
+## --axpad: how much wider (in bases) you'd like the x-axis to be, compared to the plotted area
+## --prettyskips: if TRUE, plot counts/states/t-statistics contiguously, even if there are zero entries between them (i.e., even though pos may not indicate that contiguous postions are being plotted).
+## --prettyskips(cont): note that in general, when plotting just one region, this is not an issue as regions tend to be contiguous. Will only affect areas outside the region, i.e., has larger impact if bppad is large.
+## --skiplines: if TRUE, add a light vertical line to the plot indicating an eliminated "zero" region
+## --countsheader: if TRUE, the counts matrix contains a header row. Not usually the case if counts is a database or already-loaded matrix.
+## --countssep: (defaults to tab) - if reading counts from a text file, the separator used in that file.
+## --tabname: if counts is a database file, the name of the table that was dumped into that database.
+## --plotfile: optional string containing a file name you'd like to put the plot into (if NULL, plot appears interactively). Should be a .jpg file at this time.
+## --width and height: only used with plotfile - dimensions (in pixels) of resulting jpg.  defaults to 900x750
+## --plottitle: optional main title to use on your plot.  Defaults to chromosome: start-end (referring to plotted REGION)
+## --chromosome: the chromosome corresponding to the region you're plotting, IN THE SAME FORMAT AS IS INCLUDED IN THE SUPPLIED annotation ARGUMENT
+## --legendloc: string indicating one of "topright","bottomright","topleft",or "bottomleft" indicating where the legend (indicating group label on raw count plot) should be located. Defaults to "bottomleft."
+## return:
+## a lovely plot of a specified region. (either interactively or in a jpeg file)
 
 plotRegion <- function(getRegionObject, ind, tstats, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skiplines = T, countsheader=F, countssep="\t", tabname = NULL, plotfile = NULL, width = 900, height = 750, plottitle = NULL, chromosome,legendloc="bottomleft")
 {

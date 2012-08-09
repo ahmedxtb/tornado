@@ -1,3 +1,7 @@
+# important function here is read.csv.sql
+# arguments and return are exactly the same as read.csv.sql() in the sqldf package
+# the only difference is that Tcl/Tk is NOT ALLOWED.
+
 read.csv.sql <- function (file, sql = "select * from file", header = TRUE, sep = ",", 
     row.names, eol, skip, filter, nrows, field.types, comment.char, 
     dbname = tempfile(), drv = "SQLite", ...) 

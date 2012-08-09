@@ -11,6 +11,7 @@
 ## return:
 ## list with elements $tt (containing the moderated t-statistics for each gene/bp) and $logfchange (containing the log2 fold change in coverage between the groups, as estimated by a linear model)
 getTstats = function(fit, trend = FALSE){
+	require(limma)
 	# get d0 and s02 (prior parameters)
 	sg2 <- fit$sigma^2
 	sg2 <- pmax(sg2,1e-05*median(sg2)) 

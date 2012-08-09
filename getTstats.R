@@ -3,6 +3,13 @@
 ## idea: something like fit = getLimmaInput(); modt = getTstats(fit)$tt
 ## most of this function is directly copied out of eBayes() from limma - just kept the parts we needed
 
+## getTstats() - this is just a less complex version of eBayes().
+## arguments:
+## --fit:  list with elements $sigma, $df.residual, $Amean (if trend=TRUE), $coefficients, and $stdev.unscaled
+## --fit (cont): this is usually the output of getLimmaInput (in our pipeline), which is designed to be a more memory-efficient version of lmFit().
+## --trend: as in eBayes, if TRUE, allow an intensity trend in the priors of variances (across genes/bps)
+## return:
+## list with elements $tt (containing the moderated t-statistics for each gene/bp) and $logfchange (containing the log2 fold change in coverage between the groups, as estimated by a linear model)
 getTstats = function(fit, trend = FALSE){
 	# get d0 and s02 (prior parameters)
 	sg2 <- fit$sigma^2

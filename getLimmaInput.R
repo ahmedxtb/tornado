@@ -9,7 +9,7 @@
 ## (note: dbfile and tablename arguments in makeDb() and this function should match)
 ## --adjustvars: if desired, an nxp matrix of adjustment variables (confounders, SVA output, etc.)
 ## --group: a length n 0/1 vector grouping the samples (currently only handles 2 groups)
-## --colsubset: if desired, column indices of the input file of the samples you wish to include in analysis
+## --colsubset: if desired, column indices of the input file of the samples you wish to include in analysis. Should NOT include 1 (pos).
 ## return:
 ## a list containing elements $ebobject, which is a list mimicking the output of running lmFit on the whole dataset,
 ## and $pos, giving the row indices of all the positions on the chromosome passing the filtering criterion (i.e. bases with nontrivial coverage)
@@ -21,8 +21,7 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 	pos = tab[,1]$pos #ASSUMES FIRST COLUMN IS CALLED POS!!!!!
 	N = length(pos)
 	
-	if(!is.null(colsubset)) tab = tab[,colsubset]
-	if(is.null(colsubset)) tab = tab[,-1] #pos is not part of analysis.
+	if(!is.null(colsubset)) tab = tab[,colsubset] #note that this loads the matrix into memory.
 	
 	# set up model matrix (we are regressing count on group plus optional adjustment variables)
 	if(!is.null(adjustvars)){
@@ -43,8 +42,8 @@ getLimmaInput <- function(dbfile, tablename, adjustvars = NULL, group, chunksize
 	# loop through database to create these vectors - these are input to eBayes
 	lastloop = trunc(N/chunksize)
 	for(i in 0:lastloop){
-		if(i!=lastloop) mymat <- tab[(chunksize*i+1):(chunksize*(i+1)),]
-		else mymat <- tab[(chunksize*i+1):N,]
+		if(i!=lastloop) mymat <- tab[(chunksize*i+1):(chunksize*(i+1)),-1] #-1 removes pos
+		else mymat <- tab[(chunksize*i+1):N,-1] #-1 removes pos
 		mymat <- log2(mymat+0.5)
 	        mymat <- sweep(mymat,2,Biobase::rowMedians(t(mymat)))
 		fit <- lmFit(mymat,x)

@@ -1,5 +1,20 @@
 source("~/Documents/hopkins/research/_readlets/tornado/locfdrFit.R") 
 source("~/Documents/hopkins/research/_readlets/tornado/paramHelpers.R")
+# getParams() depends on locfdrFit and all the functions in paramHelpers
+
+## getParams()
+## arguments: 
+## --tstats: vector of t statistics (probably the output of getTstats()) obtained by testing for DE at each base
+## --plots: if TRUE, diagnostic plots are generated
+## --plotfile: (optional) string containing a file where plots will be written, if plots = TRUE. If plots=TRUE and no plotfile is provided, interactive graphics will be used.
+## --verbose: if TRUE, messages will print as the function runs and parameters are estimated.
+## return:
+## a list containing several elements:
+## $params: a list containing $mean and $sd, vectors giving the estimated mean and sd (respectively) of the zero state, null distribution, DE-up distribution, and DE-down distribution (respectively)
+## $stateprobs: a vector containing the estimated proportion of zeros, null bases, DE-up bases, and DE-down bases, respectively
+## $pi.z, $pi.0, and $pi.1: just provides easier access to stateprobs: note that stateprobs = c(pi.z, pi.0, pi.1/2, pi.1/2)
+## suggested use: findparams.chr1 = getParams(tstats); regions = getRegions("HMM",1,pos,tstats,stateprobs=findparams.chr1$stateprobs, params=findparams.chr1$params)
+## (i.e., params and stateprobs elements correspond to what should be fed to getRegions()
 getParams <- function(tstats, plots=FALSE, plotfile=NULL, verbose=F)
 {
 	if(plots & !is.null(plotfile)) pdf(file=plotfile)

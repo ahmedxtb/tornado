@@ -2,8 +2,13 @@
 # 7/18/12
 # updated 8/7/12 to include the failsafe function
 
+# little helper function
 last <- function(x) return(tail(x, n=1))
 
+## getParams.failsafe:
+## no arguments - used entirely within the functions below
+## return: list with $DEup.mean, $DEdown.mean, $DEup.sd, and $DEdown.sd, giving parameters of alternative distributions as estimated by locfdr
+## used in case our numerical estimation method fails.
 getParams.failsafe <- function(){
 	# this shouldn't need any arguments, since it's used entirely within the other functions.
 	# used if the other method fails.
@@ -34,6 +39,16 @@ getParams.failsafe <- function(){
 			return(list(DEup.mean = DEup.mean, DEdown.mean = DEdown.mean, DEup.sd = DEup.sd, DEdown.sd = DEdown.sd))
 }
 
+## get.numalts():
+## arguments:
+## --pctil: a percentile (e.g. 0.01 for first percentile, 0.88 for 88th percentile...)
+## --null.mean, null.sd: parameters of null distribution as estimated from locfdr
+## --null.prop: proportion of null values as estimated from locfdr
+## --vals: full vector of t statistics (or whatever) that you estimated your null/alt distributions from
+## --up: TRUE if you're estimating the DEup parameters, FALSE if estimating DEdown parameters.
+## return: the estimated number of alternative values (in vals) above (below, if up=F) the pctil'th percentile of the null distribution
+## the above number is in element $num, the element $val contains the pctil'th percentile of the null distribution.
+## note that this function probably shouldn't be used directly: only used by find.mean and find.sd (below)
 get.numalts <- function(pctil,null.mean,null.sd,null.prop,vals,up = TRUE){
 	cutoff.val = qnorm(pctil,null.mean,null.sd)
 	num.nulls = null.prop*length(vals)
@@ -46,6 +61,15 @@ get.numalts <- function(pctil,null.mean,null.sd,null.prop,vals,up = TRUE){
 	return(list(num=round(num.alts.above),val=cutoff.val))
 }
 
+## find.mean.up():
+## arguments:
+## --init.value: intial percentile of null distribution we are going to look at
+## --null.mean, null.sd: parameters of null distribution as estimated from locfdr
+## --null.prop: proportion of null values as estimated from locfdr
+## --vals: full vector of t statistics (or whatever) that you estimated your null/alt distributions from
+## return:
+## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-up distribution) and $p (the percentile of the null distribution used to calculate that mean)
+## --if our method FAILS: list with elements $m (estimated mean of the DE-up distribution) and $s (estimated sd of DE-up dist), as estimated with getParams.failsafe().
 find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 	if(init.value<=0.5) stop("finding DE up quantile - init.value should be >0.5")
 	x = init.value
@@ -100,6 +124,16 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 		}
 }
 
+
+## find.mean.down():  slightly modified version of find.mean.up...
+## arguments:
+## --init.value: intial percentile of null distribution we are going to look at
+## --null.mean, null.sd: parameters of null distribution as estimated from locfdr
+## --null.prop: proportion of null values as estimated from locfdr
+## --vals: full vector of t statistics (or whatever) that you estimated your null/alt distributions from
+## return:
+## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-down distribution) and $p (the percentile of the null distribution used to calculate that mean)
+## --if our method FAILS: list with elements $m (estimated mean of the DE-down distribution) and $s (estimated sd of DE-down dist), as estimated with getParams.failsafe().
 find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 	if(init.value>=0.5) stop("finding DE down quantile - init.value should be <0.5")
 	x = init.value
@@ -154,13 +188,24 @@ find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 		}
 }
 
+## just used in case you don't want to use the above find.mean.up or find.mean.down.  arguments/return are the same.
 find.mean <- function(init.value, null.mean, null.sd, null.prop, vals, up = TRUE){
 	if(up) k = find.mean.up(init.value, null.mean, null.sd, null.prop, vals)
 	if(!up) k = find.mean.down(init.value, null.mean, null.sd, null.prop, vals)
 	return(k)
 }
 
-
+## find.sd(): used to find SD of alternative distribution if find.mean.up or down succeeds
+## arguments:
+## --prev.p: percentile used to find the alternative mean (i.e., the $p return from find.mean.up or down)
+## --found.mean: alternative mean found (i.e., the $m return from find.mean.up or down)
+## --null.mean, null.sd: parameters of null distribution as estimated from locfdr
+## --null.prop: proportion of null values as estimated from locfdr
+## --vals: full vector of t statistics (or whatever) that you estimated your null/alt distributions from
+## --up: TRUE if you want the DEup sd, FALSE if you want the DEdown.sd
+## return:
+## --if this method succeeds, the estimated standard deviation of the alternative distribution (using this method)
+## --if this method succeeds, the estimated sd of the alternative distribution using the output from locfdr. warning message is printed.
 find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=T){
 	if(up) new.percentile = (1+prev.p)/2 # we increase the percentile we're going to look at
 	if(!up) new.percentile = prev.p/2 #decrease it.

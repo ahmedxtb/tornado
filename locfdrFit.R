@@ -5,7 +5,15 @@
 locmle <- locfdr:::locmle
 loccov2 <- locfdr:::loccov2
 
-
+## locfdrFit():
+## arguments: for description of arguments, see locfdr() - exactly the same.
+## return:  see locfdr() for many of the return elements, but this function has additional ones:
+## --yt: heights of pink histogram bars that appear on the plots (i.e., heights of alt. density's histogram)
+## --x: locations of pink histogram bars that appear on the plots (locations of alt. density's histogram)
+## --mlest.lo and mlest.hi: if the function outputs a warning message saying "please re-run with mlest parameters = ...", said parameters are returned in these variables
+## --needsfix: should the function advise you to re-run with different mlest parameters, needsfix will be 1, otherwise needsfix = 0.
+## --nulldens: y-values of estimated null distribution density
+## --fulldens: y-values of estimated full (mixture) density
 locfdrFit <- function (zz, bre = 120, df = 7, pct = 0, pct0 = 1/4, nulltype = 1, 
     type = 0, plot = 1, mult, mlests, main = " ", sw = 0, verbose=T) 
 {

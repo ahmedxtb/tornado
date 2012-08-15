@@ -1,6 +1,28 @@
 # function going from estimated distribution params --> list of regions
 # alyssa frazee 6/6/12
 
+## getRegions()
+## arguments:
+## --method: can be "HMM" for hidden markov model, "smoothcut" for Rafa's method from last summer (smooth t-stats and choose a cutoff), or "CBS" for circular binary segmentation
+## --chromosome: name of the chromosome being analyzed. Only used for output purposes (will be printed in returned data frame)
+## --pos: vector telling which bases are being tested.  Returned by getLimmaInput(), and is first column of .db file specified earlier in pipeline (e.g., in makeDb())
+## --tstats: vector giving t statistics for each base. Same length as pos. 
+## --transprobs: used in "HMM" method - first element determines the diagonal of the transition matrix
+## --transprobs (cont): second element determines likelihood of transitioning from expressed to DE or vice versa, or from DE up to DE down or vice versa - should be very small
+## --transprobs (cont): the remainder of the transition matrix is then fixed. 
+## --stateprobs: used in "HMM" method - length 4 vector giving probability of being in each of 0, null, DE up, or DE down states.  Usually obtained with getParams()
+## --params: used in "HMM" method - list containing the length-4 vectors $mean and $sd, giving means and sds of normal distributions for 0, null, DE up, or DE down states.  Usually obtained with getParams()
+## --K: used in the "smoothcut" method - width of window used in smoothing t-statistics
+## --tcut: used in the "smoothcut" method - t statistic cutoff above which a base will be classified as differentially expressed
+## --includet: if TRUE, output includes t-statistics for each base in addition to state calls
+## --includefchange: if TRUE, output includes the fold change (not log scale) in expression (between groups) for each base
+## --fchange: required if includefchange=TRUE - log2 fold changes for each base. These are returned by getTstats().
+## return:
+## a list, one element is $states, a data frame containing columns chr, start, end, and state, one row for each region identified.
+## state=1 means not expressed, 2 means expressed (no DE), 3 means DE up, 4 means DE down
+## if includet and/or includefchange are true, $states will contain columns mean.t and/or mean.fold.change, giving the mean t statistic and/or mean fold change for the region.
+## return list also contains $states.norle, which is a 3-column data frame giving chr, pos, and state for each position. Useful in plotting.
+
 getRegions <- function(method, chromosome, pos, tstats, transprobs = c(0.999, 1e-12), stateprobs = NULL, 
 	params = NULL, K = 25, tcut = 2, includet=F, includefchange=F, fchange=NULL)
 {

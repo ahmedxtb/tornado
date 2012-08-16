@@ -3,7 +3,7 @@
 # NOT YET TESTED AS FUNCTION (though the pieces inside have been run)
 
 
-## getLimmaInput.p()
+## getLimmaInput()
 ## arguments:
 ## --dbfile: string giving location of .db file (usually created with makeDb()) containing the data
 ## --tablename: name of table in the .db file (usually created with makeDb())
@@ -15,36 +15,42 @@
 ## return:
 ## a list containing elements $ebobject, which is a list mimicking the output of running lmFit on the whole dataset,
 ## and $pos, giving the row indices of all the positions on the chromosome passing the filtering criterion (i.e. bases with nontrivial coverage)
-## usage recommendataion: run getLimmaInput.p(), pass $ebobject to getTstats(), save $pos as rda file in case it is needed later
+## usage recommendataion: run getLimmaInput(), pass $ebobject to getTstats(), save $pos as rda file in case it is needed later
 
-getLimmaInput.p <- function(dbfile, tablename, adjustvars, group, colsubset, chunksize = 100000){
+getLimmaInput <- function(dbfile, tablename, group, chunksize = 100000, adjustvars = NULL, colsubset = NULL){
 	require(limma)
 	require(multicore)
 	require(Genominator)
 	
+	# get ready to read from database:
+	tab = ExpData(dbfile, tablename)
+	if(!is.null(colsubset)) tab = tab[,colsubset] #not recommended, as this loads matrix into memory.
+	pos = tab[,1]$pos
+	N = length(pos)
+	lastloop = trunc(N/chunksize)
+
 	# create model matrix:
+	ncol = length(tab[1,])
+	colmeds = NULL
+	for(i in 2:ncol){
+		eval(parse(text=paste("med = median(tab[,",i,"]$",names(tab[,i]),")",sep="")))
+		colmeds[i-1] = med
+	} #get median of each column to use as adjustment variable
 	if(!is.null(adjustvars)){
 		string1 = ""
 		for(i in 1:dim(adjustvars)[2]){
 			eval(parse(text=paste("av",i," <- adjustvars[,",i,"]",sep="")))
 			string1 = paste(string1, paste("av",i,sep=""),sep="+")
 		}
-		eval(parse(text=paste("x = model.matrix(~group",string1,")",sep="")))
-	}else{x = model.matrix(~group)}	
-	
-	# get ready to read from database:
-	tab = ExpData(dbfile, tablename)
-	pos = tab[,1]$pos
-	N = length(pos)
-	lastloop = trunc(N/chunksize)
+		eval(parse(text=paste("x = model.matrix(~group+colmeds",string1,")",sep="")))
+	}else{x = model.matrix(~group+colmeds)}	
 	
 	# define modeling function to apply to each chunk:
 	lmFit.apply = function(i){
   		if(i!=lastloop) mymat <- tab[(chunksize*i+1):(chunksize*(i+1)),-1] #-1 removes pos
   		else mymat <- tab[(chunksize*i+1):N,-1] #-1 removes pos
   		mymat <- log2(mymat+0.5)
-  		Amean <- rowMeans(mymat) # is this the mean we want? or do we want the mean of the centered values? or a different adjustment?
-  		mymat <- sweep(mymat,2,Biobase::rowMedians(t(mymat)))
+  		Amean <- rowMeans(mymat) 
   		fit <- lmFit(mymat,x)
   		return(list(fit=fit, Amean=Amean))
   		}
@@ -52,9 +58,9 @@ getLimmaInput.p <- function(dbfile, tablename, adjustvars, group, colsubset, chu
 	# fit a model to each row (chunk) of database:
 	if(interactive()) {
 		warning("Cannot use mclapply in interactive session; reverting to single-core lapply")
-		lmFit.output = lapply(1:lastloop, lmFit.apply)
+		lmFit.output = lapply(0:lastloop, lmFit.apply)
 		}
-	if(!interactive()) lmFit.output = mclapply(1:lastloop, lmFit.apply)
+	if(!interactive()) lmFit.output = mclapply(0:lastloop, lmFit.apply)
 	
 	# gather results from all the models and return them (this part isn't tested):
 	coef = stdev = sma = dfres = am = NULL
@@ -65,6 +71,6 @@ getLimmaInput.p <- function(dbfile, tablename, adjustvars, group, colsubset, chu
   		dfres = append(dfres, lmFit.output[[i]]$fit$df.residual)
   		am = append(am, lmFit.output[[i]]$Amean)
 	}
-	return(list(ebobject = list(coefficients = coef, stdev.unscaled = stdev, sigma = sma, df.residual = dfres, Amean = am), pos = pos))
+	return(list(ebobject = list(coefficients = as.numeric(coef), stdev.unscaled = as.numeric(stdev), sigma = sma, df.residual = dfres, Amean = am), pos = pos))
 	
 } #end function

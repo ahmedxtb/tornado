@@ -689,24 +689,25 @@ sqldf <- function (x, stringsAsFactors = FALSE, row.names = FALSE, envir = paren
                 sprintf("%s < \"%s\" > \"%s\"", cmd, Filename, 
                   Filename.tmp)
             else sprintf("%s > \"%s\"", cmd, Filename.tmp)
-            if (.Platform$OS == "windows") {
-                cmd <- paste("cmd /c", cmd)
-                if (FALSE) {
-                  key <- "SOFTWARE\\R-core"
-                  show.error.messages <- getOption("show.error.message")
-                  options(show.error.messages = FALSE)
-                  reg <- try(readRegistry(key, maxdepth = 3)$Rtools$InstallPath)
-                  reg <- NULL
-                  options(show.error.messages = show.error.messages)
-                  if (!is.null(reg) && !inherits(reg, "try-error")) {
-                    Rtools.path <- file.path(reg, "bin", fsep = "\\")
-                    path <- Sys.getenv("PATH")
-                    on.exit(Sys.setenv(PATH = path), add = TRUE)
-                    path.new <- paste(path, Rtools.path, sep = ";")
-                    Sys.setenv(PATH = path.new)
-                  }
-                }
-            }
+            # if (.Platform$OS == "windows") {
+                # cmd <- paste("cmd /c", cmd)
+                # if (FALSE) {
+                  # key <- "SOFTWARE\\R-core"
+                  # show.error.messages <- getOption("show.error.message")
+                  # options(show.error.messages = FALSE)
+                  # reg <- try(readRegistry(key, maxdepth = 3)$Rtools$InstallPath)
+                  # reg <- NULL
+                  # options(show.error.messages = show.error.messages)
+                  # if (!is.null(reg) && !inherits(reg, "try-error")) {
+                    # Rtools.path <- file.path(reg, "bin", fsep = "\\")
+                    # path <- Sys.getenv("PATH")
+                    # on.exit(Sys.setenv(PATH = path), add = TRUE)
+                    # path.new <- paste(path, Rtools.path, sep = ";")
+                    # Sys.setenv(PATH = path.new)
+                  # }
+                # }
+            # }
+            ## causes problems in compiling the R package - this isn't meant for windows anyway.
             if (verbose) 
                 cat("sqldf: system(\"", cmd, "\")\n", sep = "")
             system(cmd)

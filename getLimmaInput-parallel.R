@@ -1,6 +1,6 @@
-# parallelized version of getLimmaInput - runs faster
+# version of getLimmaInput that may allow parallelization in the future.
 # AF 8/15/12
-# NOT YET TESTED AS FUNCTION (though the pieces inside have been run)
+# revised 8/27/12
 
 
 ## getLimmaInput()
@@ -60,8 +60,10 @@ getLimmaInput <- function(dbfile, tablename, group, chunksize = 100000, adjustva
 		warning("Cannot use mclapply in interactive session; reverting to single-core lapply")
 		lmFit.output = lapply(0:lastloop, lmFit.apply)
 		}
-	if(!interactive()) lmFit.output = mclapply(0:lastloop, lmFit.apply)
-	
+	if(!interactive()) {
+		warning("mclapply functionality not yet implemented: fitting models with one core.")
+		lmFit.output = lapply(0:lastloop, lmFit.apply)
+	}
 	# gather results from all the models and return them (this part isn't tested):
 	coef = stdev = sma = dfres = am = NULL
 	for(i in 1:length(lmFit.output)){

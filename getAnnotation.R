@@ -33,13 +33,13 @@ getAnnotation <- function(genome, tablename, genes = TRUE, verbose = TRUE){
 		if(verbose) print("Labeling exons by gene...")
 		grl <- exonsBy(a,"gene")		
 		if(length(grl)==0) stop("cannot list exons by gene using this table. please try another table or specify genes = FALSE to list exons by transcript.")
-		datf <- as.data.frame(grl)
+		datf <- IRanges:::as.data.frame(grl)
 		names(datf)[1] <- "gene"
 	}
 	if(!genes){
 		if(verbose) print("Labeling exons by transcript...")
 		grl <- exonsBy(a,"tx")
-		datf <- as.data.frame(grl)
+		datf <- IRanges:::as.data.frame(grl)
 		names(datf)[1] <- "transcript"
 		nametable <- id2name(a,feature.type = "tx")
 	}

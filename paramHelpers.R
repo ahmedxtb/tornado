@@ -1,42 +1,22 @@
 # helper functions for getParams.R
 # 7/18/12
 # updated 8/7/12 to include the failsafe function
+# updated again 8/27/12 - new failsafe.
 
 # little helper function
 last <- function(x) return(tail(x, n=1))
 
 ## getParams.failsafe:
-## no arguments - used entirely within the functions below
+## arguments: null.mean and null.sd, mean and sd of estimated null distribution
 ## return: list with $DEup.mean, $DEdown.mean, $DEup.sd, and $DEdown.sd, giving parameters of alternative distributions as estimated by locfdr
 ## used in case our numerical estimation method fails.
-getParams.failsafe <- function(){
-	# this shouldn't need any arguments, since it's used entirely within the other functions.
-	# used if the other method fails.
-			if(!exists("fdrmodel")) stop("fdrmodel must be defined")
-			bincounts = fdrmodel$yt
-			binlocs = fdrmodel$x
-			downinds = which(binlocs<0)
-			upinds = which(binlocs>=0)
-			oecx = binlocs[upinds]
-			oecy = bincounts[upinds]
-			uecx = binlocs[downinds]
-			uecy = bincounts[downinds]
-			mystats <- mystats2 <- list()
-			for(i in 1:length(oecx)){
-                          if(oecy[i]==0) mystats[[i]] <- NA
-                          if(oecy[i]!=0) mystats[[i]] <- rep(oecx[i],round(oecy[i]))
-			}
-			mystats <- unlist(mystats)
-			DEup.sd <- sd(mystats,na.rm=TRUE)
-			DEup.mean <- mean(mystats,na.rm=TRUE)
-			for(i in 1:length(uecx)){
-                          if(uecy[i]==0) mystats2[[i]] <- NA
-                          if(uecy[i]!=0) mystats2[[i]] <- rep(uecx[i],round(uecy[i]))
-			}
-			mystats2 <- unlist(mystats2)
-			DEdown.sd <- sd(mystats2,na.rm=TRUE)
-			DEdown.mean <- mean(mystats2,na.rm=TRUE)
-			return(list(DEup.mean = DEup.mean, DEdown.mean = DEdown.mean, DEup.sd = DEup.sd, DEdown.sd = DEdown.sd))
+## just use the 5th (for DE down) and 95th (for DE up) percentiles of the null distribution as alternative means
+## and then have the alternative SDs be equal to the null SD.
+getParams.failsafe <- function(null.mean, null.sd){
+		DEup.mean = qnorm(.95, mean=null.mean, sd=null.sd)
+		DEup.sd = DEdown.sd = null.sd
+		DEdown.mean = qnorm(.05, mean=null.mean, sd=null.sd)
+		return(list(DEup.mean = DEup.mean, DEdown.mean = DEdown.mean, DEup.sd = DEup.sd, DEdown.sd = DEdown.sd))
 }
 
 ## get.numalts():
@@ -70,7 +50,7 @@ get.numalts <- function(pctil,null.mean,null.sd,null.prop,vals,up = TRUE){
 ## return:
 ## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-up distribution) and $p (the percentile of the null distribution used to calculate that mean)
 ## --if our method FAILS: list with elements $m (estimated mean of the DE-up distribution) and $s (estimated sd of DE-up dist), as estimated with getParams.failsafe().
-find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
+find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals, fdrmodel){
 	if(init.value<=0.5) stop("finding DE up quantile - init.value should be >0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEup values.
@@ -79,8 +59,8 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 	while(TRUE){
 		iter = try(get.numalts(x,null.mean,null.sd,null.prop,vals,up=T),silent=T)
 		if(class(iter)=="try-error") {
-			warning("Numerical estimation of DE-up mean failed.  Using locfdr estimates.")
-			gp = getParams.failsafe()
+			warning("Numerical estimation of DE-up mean failed.  Defaulting to mean = 95th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+			gp = getParams.failsafe(null.mean, null.sd)
 			return(list(m=gp$DEup.mean, s=gp$DEup.sd))
 		}
 		if(iter$num == target) return(list(m=iter$val,p = pseq[counter]))
@@ -94,13 +74,13 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 		
 		if(counter>1){
 			if(history[counter-1]==1 & numseq[counter]>=numseq[counter-1]){
-				warning("numerical estimation of DE-up mean failed.  Using locfdr estimates.")
-				gp = getParams.failsafe()
+				warning("Numerical estimation of DE-up mean failed.  Defaulting to mean = 95th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+				gp = getParams.failsafe(null.mean, null.sd)
 				return(list(m=gp$DEup.mean, s=gp$DEup.sd))
-			}
+			}			
 			if(history[counter-1]==-1 & numseq[counter]<=numseq[counter-1]){
-				warning("numerical estimation of DE-up mean failed.  Using locfdr estimates.")
-				gp = getParams.failsafe()
+				warning("Numerical estimation of DE-up mean failed.  Defaulting to mean = 95th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+				gp = getParams.failsafe(null.mean, null.sd)
 				return(list(m=gp$DEup.mean, s=gp$DEup.sd))
 			}
 		}
@@ -134,7 +114,7 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 ## return:
 ## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-down distribution) and $p (the percentile of the null distribution used to calculate that mean)
 ## --if our method FAILS: list with elements $m (estimated mean of the DE-down distribution) and $s (estimated sd of DE-down dist), as estimated with getParams.failsafe().
-find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
+find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals, fdrmodel){
 	if(init.value>=0.5) stop("finding DE down quantile - init.value should be <0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEdown values.
@@ -143,8 +123,8 @@ find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 	while(TRUE){
 		iter = try(get.numalts(x,null.mean,null.sd,null.prop,vals,up=F),silent=T)
 		if(class(iter)=="try-error") {
-			warning("numerical estimation of DE-down mean failed. Using locfdr estimates.")
-			gp = getParams.failsafe()
+			warning("Numerical estimation of DE-down mean failed.  Defaulting to mean = 5th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+			gp = getParams.failsafe(null.mean, null.sd)
 			return(list(m=gp$DEdown.mean,s=gp$DEdown.sd))
 		}
 		if(iter$num == target) return(list(m=iter$val,p = pseq[counter]))
@@ -158,13 +138,13 @@ find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 		
 		if(counter>1){
 			if(history[counter-1]==1 & numseq[counter]>=numseq[counter-1]){
-				warning("numerical estimation of DE-down mean failed.  Using locfdr estimates.")
-				gp = getParams.failsafe()
+				warning("Numerical estimation of DE-down mean failed.  Defaulting to mean = 5th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+				gp = getParams.failsafe(null.mean, null.sd)
 				return(list(m=gp$DEdown.mean, s=gp$DEdown.sd))
 			}
 			if(history[counter-1]==-1 & numseq[counter]<=numseq[counter-1]){
-				warning("numerical estimation of DE-down mean failed.  Using locfdr estimates.")
-				gp = getParams.failsafe()
+				warning("Numerical estimation of DE-down mean failed.  Defaulting to mean = 5th percentile of estimated null distribution, sd = sd of estimated null distribution.")
+				gp = getParams.failsafe(null.mean, null.sd)
 				return(list(m=gp$DEdown.mean, s=gp$DEdown.sd))
 			}
 		}
@@ -206,7 +186,7 @@ find.mean <- function(init.value, null.mean, null.sd, null.prop, vals, up = TRUE
 ## return:
 ## --if this method succeeds, the estimated standard deviation of the alternative distribution (using this method)
 ## --if this method succeeds, the estimated sd of the alternative distribution using the output from locfdr. warning message is printed.
-find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=T){
+find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=T, fdrmodel){
 	if(up) new.percentile = (1+prev.p)/2 # we increase the percentile we're going to look at
 	if(!up) new.percentile = prev.p/2 #decrease it.
 	cutoff.val = qnorm(new.percentile, null.mean, null.sd) # x-value that is that percentile of the theoretical null distribution
@@ -220,15 +200,15 @@ find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=
 	if(!up) alt.percentile = num.alts.above/num.alts
 	zstat = qnorm(alt.percentile)
 	if(is.na(zstat)){
-		warning("Numerical standard deviation estimation failed.  Using locfdr estimates.")
-		gp = getParams.failsafe()
+		warning("Numerical standard deviation estimation failed.  Defaulting to sd of estimated null distribution.")
+		gp = getParams.failsafe(null.mean, null.sd)
 		if(up) return(gp$DEup.sd)
 		if(!up) return(gp$DEdown.sd)
 	}
 	sigma = (cutoff.val - found.mean)/zstat
     if(num.alts.above<=0 | sigma<=0) {
-		warning("Numerical standard deviation estimation failed. Using locfdr estimates.")
-		gp = getParams.failsafe()
+		warning("Numerical standard deviation estimation failed. Defaulting to sd of estimated null distribution.")
+		gp = getParams.failsafe(null.mean, null.sd)
 		if(up) return(gp$DEup.sd)
 		if(!up) return(gp$DEdown.sd)
 	}

@@ -308,15 +308,15 @@ plotExon <- function(getRegionObject, ind=NULL, exonname=NULL, tstats, pos, anno
 ## test:
 #NM_197967, inds 18:22
 
-plotExon(myobj, ind=c(18:22), tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+# plotExon(myobj, ind=c(18:22), tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
-plotExon(myobj, ind=18, tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+# plotExon(myobj, ind=18, tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
-plotExon(myobj, exonname="NM_197967", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+# plotExon(myobj, exonname="NM_197967", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
-plotExon(myobj, exonname="NM_013236", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+# plotExon(myobj, exonname="NM_013236", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
-plotExon(myobj, ind=4618, tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+# plotExon(myobj, ind=4618, tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
 
 
@@ -478,7 +478,7 @@ plotGene <- function(getRegionObject, ind=NULL, genename=NULL, tstats, pos, anno
 	if(!is.null(plotfile)) dev.off()
 }
 
-plotGene(myobj, genename="LIMK2", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
+#plotGene(myobj, genename="LIMK2", tstats=st, pos=pos, annotation=exons, counts = log2(mat+.2), group = c("normal","cancer","normal","cancer","normal","cancer"),chromosome="chr22")
 
 
 

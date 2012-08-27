@@ -50,13 +50,13 @@ getAnnotation <- function(genome, tablename, genes = TRUE, verbose = TRUE){
 }
 
 # test:
-exons = getAnnotation("hg19","knownGene")
+#exons = getAnnotation("hg19","knownGene")
 
-mousetab <- makeTranscriptDbFromUCSC(genome="mm10",tablename="knownGene") #fail.
+#mousetab <- makeTranscriptDbFromUCSC(genome="mm10",tablename="knownGene") #fail.
 
-mousetest <- getAnnotation("mm10","genscan") #good, exits
-mousetest <- getAnnotation("mm10","genscan",genes=F) #good, continues.
-mousetest <- getAnnotation("mm10","refGene")
+#mousetest <- getAnnotation("mm10","genscan") #good, exits
+#mousetest <- getAnnotation("mm10","genscan",genes=F) #good, continues.
+#mousetest <- getAnnotation("mm10","refGene")
 
 # maybe later make a save method for the exon file? or just recommend using save?
 # write a vignette type thing showing the R code from start to finish? 

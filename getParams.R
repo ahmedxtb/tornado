@@ -44,19 +44,19 @@ getParams <- function(tstats, plots=FALSE, plotfile=NULL, verbose=F)
 	pi.1 = 1-pi.z-pi.0
 
 	if(verbose) message("starting DEup.mean...")
-	u = find.mean.up(.99, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt)
+	u = find.mean.up(.99, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, fdrmodel)
 	DEup.mean = u$m
 	if(verbose) message("starting DEdown.mean...")
-	d = find.mean.down(.01, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt)
+	d = find.mean.down(.01, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, fdrmodel)
 	DEdown.mean = d$m
 	if(names(u)[2]=="p"){
-		DEup.sd = find.sd(prev.p = u$p, found.mean = DEup.mean, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, up=TRUE)		
+		DEup.sd = find.sd(prev.p = u$p, found.mean = DEup.mean, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, up=TRUE, fdrmodel)		
 	}
 	if(names(u)[2]=="s"){
 		DEup.sd = u$s
 	}
 	if(names(d)[2]=="p"){
-		DEdown.sd = find.sd(prev.p = d$p, found.mean = DEdown.mean, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, up=FALSE)	
+		DEdown.sd = find.sd(prev.p = d$p, found.mean = DEdown.mean, null.mean = fdrmodel$fp0[3,1], null.sd = fdrmodel$fp0[3,2], null.prop = pi.0.tmp, vals = nzt, up=FALSE, fdrmodel)	
 	}
 	if(names(d)[2]=="s"){
 		DEdown.sd = d$s
@@ -72,7 +72,7 @@ getParams <- function(tstats, plots=FALSE, plotfile=NULL, verbose=F)
 	}
 
 	params = list(mean=c(0,fdrmodel$fp0[3,1],DEup.mean,DEdown.mean),sd=c(0.0000001,fdrmodel$fp0[3,2],DEup.sd,DEdown.sd))
-	out = list(params=params, stateprobs=c(pi.z,pi.0,pi.1/2,pi.1/2),pi.z=pi.z, pi.0=pi.0, pi.1=pi.1)
+	out = list(params=params, stateprobs=c(pi.z,pi.0,pi.1/2,pi.1/2))
 	return(out)
 }
 

@@ -1,5 +1,5 @@
-source("~/Documents/hopkins/research/_readlets/tornado/locfdrFit.R") 
-source("~/Documents/hopkins/research/_readlets/tornado/paramHelpers.R")
+source("locfdrFit.R") 
+source("paramHelpers.R")
 # getParams() depends on locfdrFit and all the functions in paramHelpers
 
 ## getParams()

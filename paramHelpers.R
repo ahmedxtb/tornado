@@ -50,7 +50,7 @@ get.numalts <- function(pctil,null.mean,null.sd,null.prop,vals,up = TRUE){
 ## return:
 ## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-up distribution) and $p (the percentile of the null distribution used to calculate that mean)
 ## --if our method FAILS: list with elements $m (estimated mean of the DE-up distribution) and $s (estimated sd of DE-up dist), as estimated with getParams.failsafe().
-find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals, fdrmodel){
+find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals){
 	if(init.value<=0.5) stop("finding DE up quantile - init.value should be >0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEup values.
@@ -114,7 +114,7 @@ find.mean.up <- function(init.value, null.mean, null.sd, null.prop, vals, fdrmod
 ## return:
 ## --if our method SUCCEEDS: list with elements $m (the estimated mean of the DE-down distribution) and $p (the percentile of the null distribution used to calculate that mean)
 ## --if our method FAILS: list with elements $m (estimated mean of the DE-down distribution) and $s (estimated sd of DE-down dist), as estimated with getParams.failsafe().
-find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals, fdrmodel){
+find.mean.down <- function(init.value, null.mean, null.sd, null.prop, vals){
 	if(init.value>=0.5) stop("finding DE down quantile - init.value should be <0.5")
 	x = init.value
 	target = round(0.5*0.5*(1-null.prop)*length(vals))  #half the expected # of DEdown values.
@@ -186,7 +186,7 @@ find.mean <- function(init.value, null.mean, null.sd, null.prop, vals, up = TRUE
 ## return:
 ## --if this method succeeds, the estimated standard deviation of the alternative distribution (using this method)
 ## --if this method succeeds, the estimated sd of the alternative distribution using the output from locfdr. warning message is printed.
-find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=T, fdrmodel){
+find.sd <- function(prev.p, found.mean, null.mean, null.sd, null.prop, vals, up=T){
 	if(up) new.percentile = (1+prev.p)/2 # we increase the percentile we're going to look at
 	if(!up) new.percentile = prev.p/2 #decrease it.
 	cutoff.val = qnorm(new.percentile, null.mean, null.sd) # x-value that is that percentile of the theoretical null distribution

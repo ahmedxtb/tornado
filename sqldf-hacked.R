@@ -42,7 +42,7 @@ read.csv.sql <- function (file, sql = "select * from file", header = TRUE, sep =
 
 ####################################################################################
 strapply <- function (X, pattern, FUN = function(x, ...) x, backref = NULL, 
-    ..., empty = NULL, ignore.case = FALSE, perl = FALSE, engine = "R", 
+    ..., empty = NULL, ignore.case = FALSE, perl = TRUE, engine = "R", 
     simplify = FALSE, USE.NAMES = FALSE, combine = c) 
 {
     combine <- match.funfn(combine)

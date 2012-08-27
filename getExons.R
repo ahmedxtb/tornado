@@ -52,20 +52,20 @@ getExons <- function(region,annotation,verbose=TRUE) {
 }
 
 ## test:
-annotation = load("~/Documents/hopkins/research/_readlets/_rda_files/hg19-exons.rda")
-exons[18,]
-regiontest = c("chr22",18216902, 18218350)
-getExons(regiontest, exons)
-names(exons)
-names(exons)[which(names(exons)=="chrom")] = "chr"
-names(exons)
-getExons(regiontest, exons)
-myexons = getExons(regiontest,exons)
-regiontest2 = c("chr22",16003924, 16004924)
-getExons(regiontest2,exons)
-regiontest3 = c("chr22",17003924, 17004924)
-myexons = getExons(regiontest3)
-myexons = getExons(regiontest3, exons)
+# annotation = load("~/Documents/hopkins/research/_readlets/_rda_files/hg19-exons.rda")
+# exons[18,]
+# regiontest = c("chr22",18216902, 18218350)
+# getExons(regiontest, exons)
+# names(exons)
+# names(exons)[which(names(exons)=="chrom")] = "chr"
+# names(exons)
+# getExons(regiontest, exons)
+# myexons = getExons(regiontest,exons)
+# regiontest2 = c("chr22",16003924, 16004924)
+# getExons(regiontest2,exons)
+# regiontest3 = c("chr22",17003924, 17004924)
+# myexons = getExons(regiontest3)
+# myexons = getExons(regiontest3, exons)
 
 
 

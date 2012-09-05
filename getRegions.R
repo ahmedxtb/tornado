@@ -86,7 +86,7 @@ getRegions <- function(method, chromosome, pos, tstats, transprobs = c(0.999, 1e
     	full.t[pos] = tstats
     	tmean = NULL
     	for(i in 1:dim(states)[1]){
-    		tmean <- mean(full.t[states$start[i]:states$end[i]])
+    		tmean[i] <- mean(full.t[states$start[i]:states$end[i]])
     	}
     	states = data.frame(states,mean.t=tmean)
     }
@@ -96,7 +96,7 @@ getRegions <- function(method, chromosome, pos, tstats, transprobs = c(0.999, 1e
     	full.fchange[pos] = 2^fchange
     	fcmean = NULL
     	for(i in 1:dim(states)[1]){
-    		fcmean <- mean(full.fchange[states$start[i]:states$end[i]])
+    		fcmean[i] <- mean(full.fchange[states$start[i]:states$end[i]])
     	}
     	states = data.frame(states,mean.fold.change=fcmean)
     }
@@ -107,8 +107,8 @@ getRegions <- function(method, chromosome, pos, tstats, transprobs = c(0.999, 1e
     	full.fchange[pos] = 2^fchange
     	tmean = fcmean = NULL
     	for(i in 1:dim(states)[1]){
-       		fcmean <- mean(full.fchange[states$start[i]:states$end[i]])
-    		tmean <- mean(full.t[states$start[i]:states$end[i]])
+       		fcmean[i] <- mean(full.fchange[states$start[i]:states$end[i]])
+    		tmean[i] <- mean(full.t[states$start[i]:states$end[i]])
     	}
     	states = data.frame(states,mean.t=tmean,mean.fold.change=fcmean)
 	}

@@ -1,0 +1,9 @@
+Package: tornado
+Type: Package
+Title: Differential expression analysis of per-nucleotide coverage tables.
+Version: 1.0
+Date: 2012-08-27
+Author: Alyssa Frazee
+Maintainer: Alyssa Frazee <afrazee@jhsph.edu>
+Description: Creates SQLite database of per-nucleotide coverage files, fits linear model to each nucleotide to determine differential expression, fits Hidden Markov Model using moderated t statistics from linear models as state emissions to get a list of differentially expressed regions, connects found regions with known annotation.
+License: None yet.

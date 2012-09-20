@@ -1,0 +1,682 @@
+Hmm ... looks like a package
+
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
+ restricted \write18 enabled.
+entering extended mode
+
+(/private/var/folders/77/3mxqtkh90yg57bj9j_ngmwvw0000gn/T/Rtmpq9Bc0P/Rd2pdf6376
+18a6307/Rd2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty) NOT loading ae
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/times.sty)
+NOT loading lmodern
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+No file Rd2.aux.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (8.55864pt too wide) in paragraph at lines 94--95
+[]\T1/ptm/m/n/10 For ex-pe-ri-enced users/debugging only. Calls \T1/fi4/m/n/10 
+find.mean.up \T1/ptm/m/n/10 if up=TRUE, else calls \T1/fi4/m/n/10 find.mean.dow
+n\T1/ptm/m/n/10 .
+[2] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [3]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [6]
+Overfull \hbox (36.11845pt too wide) in paragraph at lines 359--360
+[]\T1/ptm/m/n/10 UCSC ta-ble from which to down-load exon in-for-ma-tion. Use \
+T1/fi4/m/n/10 supportedTables(genome)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [7]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (79.78088pt too wide) in paragraph at lines 450--450
+ []\T1/fi4/m/n/10 getLimmaInput(dbfile, tablename, group, chunksize = 1e+05, ad
+justvars = NULL, colsubset = NULL)[] 
+[9] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [11]
+Overfull \hbox (479.78088pt too wide) in paragraph at lines 610--610
+ []\T1/fi4/m/n/10 getRegions(method, chromosome, pos, tstats, transprobs = c(0.
+999, 1e-12), stateprobs = NULL, params = NULL, K = 25, tcut = 2, includet = F, 
+includefchange = F, fchange = NULL)[] 
+[12] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (20.81953pt too wide) in paragraph at lines 690--691
+[]\T1/ptm/m/n/10 list with el-e-ments \T1/fi4/m/n/10 $sigma\T1/ptm/m/n/10 , \T1
+/fi4/m/n/10 $df.residual\T1/ptm/m/n/10 , \T1/fi4/m/n/10 $Amean \T1/ptm/m/n/10 (
+if \T1/fi4/m/n/10 trend=TRUE\T1/ptm/m/n/10 ), \T1/fi4/m/n/10 $coefficients\T1/p
+tm/m/n/10 ,
+[13] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (139.78088pt too wide) in paragraph at lines 726--726
+ []\T1/fi4/m/n/10 gsubfn(pattern, replacement, x, backref, USE.NAMES = FALSE, i
+gnore.case = FALSE, env = parent.frame(), ...)[] 
+[14] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [15]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (274.78088pt too wide) in paragraph at lines 837--837
+ []\T1/fi4/m/n/10 locfdrFit(zz, bre = 120, df = 7, pct = 0, pct0 = 1/4, nulltyp
+e = 1, type = 0, plot = 1, mult, mlests, main = " ", sw = 0, verbose = T)[] 
+[16] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [17]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (38.0983pt too wide) in paragraph at lines 975--979
+[]\T1/ptm/m/n/10 The de-fault method is the same as \T1/fi4/m/n/10 match.fun \T
+1/ptm/m/n/10 and the \T1/fi4/m/n/10 formula \T1/ptm/m/n/10 method is the same a
+s \T1/fi4/m/n/10 as.function.formula\T1/ptm/m/n/10 .
+[18] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (289.78088pt too wide) in paragraph at lines 1001--1001
+ []\T1/fi4/m/n/10 ostrapply(X, pattern, FUN = function(x, ...) x, ignore.case =
+ FALSE, ..., empty = NULL, simplify = FALSE, USE.NAMES = FALSE, combine = c)[] 
+
+[19] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1065--1065
+ []\T1/fi4/m/n/10 plotExon(getRegionObject, ind = NULL, exonname = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1087--1088
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[20]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1132--1133
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+[21] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1161--1161
+ []\T1/fi4/m/n/10 plotGene(getRegionObject, ind = NULL, genename = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+[22]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1228--1229
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [23]
+Overfull \hbox (1004.78088pt too wide) in paragraph at lines 1257--1257
+ []\T1/fi4/m/n/10 plotRegion(getRegionObject, ind, tstats, pos, annotation, cou
+nts, group, bppad = 50, axpad = 50, prettyskips = T, skiplines = T, countsheade
+r = F, countssep = "\t", tabname = NULL, plotfile = NULL, width = 900, height =
+ 750, plottitle = NULL, chromosome, legendloc = "bottomleft")[] 
+
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1276--1277
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[24]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1321--1322
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (494.78088pt too wide) in paragraph at lines 1346--1346
+ []\T1/fi4/m/n/10 read.csv.sql(file, sql = "select * from file", header = TRUE,
+ sep = ",", row.names, eol, skip, filter, nrows, field.types, comment.char, dbn
+ame = tempfile(), drv = "SQLite", ...)[] 
+[25] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [26]
+Overfull \hbox (1319.78088pt too wide) in paragraph at lines 1420--1420
+ []\T1/fi4/m/n/10 sqldf(x, stringsAsFactors = FALSE, row.names = FALSE, envir =
+ parent.frame(), method = getOption("sqldf.method"), file.format = list(), dbna
+me, drv = getOption("sqldf.driver"), user, password = "", host = "localhost", p
+ort, dll = getOption("sqldf.dll"), connection = getOption("sqldf.connection"), 
+verbose = isTRUE(getOption("sqldf.verbose")))[] 
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (499.78088pt too wide) in paragraph at lines 1444--1444
+ []\T1/fi4/m/n/10 strapply(X, pattern, FUN = function(x, ...) x, backref = NULL
+, ..., empty = NULL, ignore.case = FALSE, perl = TRUE, engine = "R", simplify =
+ FALSE, USE.NAMES = FALSE, combine = c)[] 
+[27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [28]
+Overfull \hbox (90.78088pt too wide) in paragraph at lines 1548--1548
+ []\T1/fi4/m/n/9 mouse.exons = getAnnotation("mm10","refGene") #refGene appears
+ in printed output of supportedTables("mm10").[] 
+No file Rd2.ind.
+[29] (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.paste} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Rfn.cat} has been referenced but does not exist, re
+placed by a fixed one
+
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2011/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/20
+11/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on Rd2.pdf (29 pages, 135211 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
+Scanning input file ./Rd2.idx....done (73 entries accepted, 0 rejected).
+Sorting entries....done (443 comparisons).
+Generating output file ./Rd2.ind....done (92 lines written, 3 warnings).
+Output written in ./Rd2.ind.
+Transcript written in ./Rd2.ilg.
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
+ restricted \write18 enabled.
+entering extended mode
+
+(/private/var/folders/77/3mxqtkh90yg57bj9j_ngmwvw0000gn/T/Rtmpq9Bc0P/Rd2pdf6376
+18a6307/Rd2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty) NOT loading ae
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/times.sty)
+NOT loading lmodern
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(./Rd2.aux) (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./Rd2.out) (./Rd2.out)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc
+[1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [2]
+Overfull \hbox (8.55864pt too wide) in paragraph at lines 94--95
+[]\T1/ptm/m/n/10 For ex-pe-ri-enced users/debugging only. Calls \T1/fi4/m/n/10 
+find.mean.up \T1/ptm/m/n/10 if up=TRUE, else calls \T1/fi4/m/n/10 find.mean.dow
+n\T1/ptm/m/n/10 .
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [3]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [6]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (36.11845pt too wide) in paragraph at lines 359--360
+[]\T1/ptm/m/n/10 UCSC ta-ble from which to down-load exon in-for-ma-tion. Use \
+T1/fi4/m/n/10 supportedTables(genome)
+[7] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (79.78088pt too wide) in paragraph at lines 450--450
+ []\T1/fi4/m/n/10 getLimmaInput(dbfile, tablename, group, chunksize = 1e+05, ad
+justvars = NULL, colsubset = NULL)[] 
+[9] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [11]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (479.78088pt too wide) in paragraph at lines 610--610
+ []\T1/fi4/m/n/10 getRegions(method, chromosome, pos, tstats, transprobs = c(0.
+999, 1e-12), stateprobs = NULL, params = NULL, K = 25, tcut = 2, includet = F, 
+includefchange = F, fchange = NULL)[] 
+[12] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (20.81953pt too wide) in paragraph at lines 690--691
+[]\T1/ptm/m/n/10 list with el-e-ments \T1/fi4/m/n/10 $sigma\T1/ptm/m/n/10 , \T1
+/fi4/m/n/10 $df.residual\T1/ptm/m/n/10 , \T1/fi4/m/n/10 $Amean \T1/ptm/m/n/10 (
+if \T1/fi4/m/n/10 trend=TRUE\T1/ptm/m/n/10 ), \T1/fi4/m/n/10 $coefficients\T1/p
+tm/m/n/10 ,
+[13] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (139.78088pt too wide) in paragraph at lines 726--726
+ []\T1/fi4/m/n/10 gsubfn(pattern, replacement, x, backref, USE.NAMES = FALSE, i
+gnore.case = FALSE, env = parent.frame(), ...)[] 
+[14] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [15]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (274.78088pt too wide) in paragraph at lines 837--837
+ []\T1/fi4/m/n/10 locfdrFit(zz, bre = 120, df = 7, pct = 0, pct0 = 1/4, nulltyp
+e = 1, type = 0, plot = 1, mult, mlests, main = " ", sw = 0, verbose = T)[] 
+[16] [17] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [18]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (38.0983pt too wide) in paragraph at lines 975--979
+[]\T1/ptm/m/n/10 The de-fault method is the same as \T1/fi4/m/n/10 match.fun \T
+1/ptm/m/n/10 and the \T1/fi4/m/n/10 formula \T1/ptm/m/n/10 method is the same a
+s \T1/fi4/m/n/10 as.function.formula\T1/ptm/m/n/10 .
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [19]
+Overfull \hbox (289.78088pt too wide) in paragraph at lines 1001--1001
+ []\T1/fi4/m/n/10 ostrapply(X, pattern, FUN = function(x, ...) x, ignore.case =
+ FALSE, ..., empty = NULL, simplify = FALSE, USE.NAMES = FALSE, combine = c)[] 
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [20]
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1065--1065
+ []\T1/fi4/m/n/10 plotExon(getRegionObject, ind = NULL, exonname = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1087--1088
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[21]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1132--1133
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1161--1161
+ []\T1/fi4/m/n/10 plotGene(getRegionObject, ind = NULL, genename = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+[22] [23]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1228--1229
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1004.78088pt too wide) in paragraph at lines 1257--1257
+ []\T1/fi4/m/n/10 plotRegion(getRegionObject, ind, tstats, pos, annotation, cou
+nts, group, bppad = 50, axpad = 50, prettyskips = T, skiplines = T, countsheade
+r = F, countssep = "\t", tabname = NULL, plotfile = NULL, width = 900, height =
+ 750, plottitle = NULL, chromosome, legendloc = "bottomleft")[] 
+[24]
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1276--1277
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[25]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1321--1322
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (494.78088pt too wide) in paragraph at lines 1346--1346
+ []\T1/fi4/m/n/10 read.csv.sql(file, sql = "select * from file", header = TRUE,
+ sep = ",", row.names, eol, skip, filter, nrows, field.types, comment.char, dbn
+ame = tempfile(), drv = "SQLite", ...)[] 
+[26] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1319.78088pt too wide) in paragraph at lines 1420--1420
+ []\T1/fi4/m/n/10 sqldf(x, stringsAsFactors = FALSE, row.names = FALSE, envir =
+ parent.frame(), method = getOption("sqldf.method"), file.format = list(), dbna
+me, drv = getOption("sqldf.driver"), user, password = "", host = "localhost", p
+ort, dll = getOption("sqldf.dll"), connection = getOption("sqldf.connection"), 
+verbose = isTRUE(getOption("sqldf.verbose")))[] 
+[27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (499.78088pt too wide) in paragraph at lines 1444--1444
+ []\T1/fi4/m/n/10 strapply(X, pattern, FUN = function(x, ...) x, backref = NULL
+, ..., empty = NULL, ignore.case = FALSE, perl = TRUE, engine = "R", simplify =
+ FALSE, USE.NAMES = FALSE, combine = c)[] 
+[28] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (90.78088pt too wide) in paragraph at lines 1548--1548
+ []\T1/fi4/m/n/9 mouse.exons = getAnnotation("mm10","refGene") #refGene appears
+ in printed output of supportedTables("mm10").[] 
+(./Rd2.ind [29]
+
+LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
+(Font)              using `T1/fi4/m/n' instead on input line 88.
+
+[30]) (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.paste} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Rfn.cat} has been referenced but does not exist, re
+placed by a fixed one
+
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2011/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on Rd2.pdf (30 pages, 150982 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2011] (kpathsea + Thai support).
+Scanning input file ./Rd2.idx....done (73 entries accepted, 0 rejected).
+Sorting entries....done (444 comparisons).
+Generating output file ./Rd2.ind....done (90 lines written, 4 warnings).
+Output written in ./Rd2.ind.
+Transcript written in ./Rd2.ilg.
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011)
+ restricted \write18 enabled.
+entering extended mode
+
+(/private/var/folders/77/3mxqtkh90yg57bj9j_ngmwvw0000gn/T/Rtmpq9Bc0P/Rd2pdf6376
+18a6307/Rd2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/url/url.sty) NOT loading ae
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/times.sty)
+NOT loading lmodern
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2011/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 342.
+
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(./Rd2.aux) (/usr/local/texlive/2011/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2011/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./Rd2.out) (./Rd2.out)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/inconsolata/t1fi4.fd)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc
+[1{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [2]
+Overfull \hbox (8.55864pt too wide) in paragraph at lines 94--95
+[]\T1/ptm/m/n/10 For ex-pe-ri-enced users/debugging only. Calls \T1/fi4/m/n/10 
+find.mean.up \T1/ptm/m/n/10 if up=TRUE, else calls \T1/fi4/m/n/10 find.mean.dow
+n\T1/ptm/m/n/10 .
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [3]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [6]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (36.11845pt too wide) in paragraph at lines 359--360
+[]\T1/ptm/m/n/10 UCSC ta-ble from which to down-load exon in-for-ma-tion. Use \
+T1/fi4/m/n/10 supportedTables(genome)
+[7] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (79.78088pt too wide) in paragraph at lines 450--450
+ []\T1/fi4/m/n/10 getLimmaInput(dbfile, tablename, group, chunksize = 1e+05, ad
+justvars = NULL, colsubset = NULL)[] 
+[9] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [11]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (479.78088pt too wide) in paragraph at lines 610--610
+ []\T1/fi4/m/n/10 getRegions(method, chromosome, pos, tstats, transprobs = c(0.
+999, 1e-12), stateprobs = NULL, params = NULL, K = 25, tcut = 2, includet = F, 
+includefchange = F, fchange = NULL)[] 
+[12] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (20.81953pt too wide) in paragraph at lines 690--691
+[]\T1/ptm/m/n/10 list with el-e-ments \T1/fi4/m/n/10 $sigma\T1/ptm/m/n/10 , \T1
+/fi4/m/n/10 $df.residual\T1/ptm/m/n/10 , \T1/fi4/m/n/10 $Amean \T1/ptm/m/n/10 (
+if \T1/fi4/m/n/10 trend=TRUE\T1/ptm/m/n/10 ), \T1/fi4/m/n/10 $coefficients\T1/p
+tm/m/n/10 ,
+[13] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (139.78088pt too wide) in paragraph at lines 726--726
+ []\T1/fi4/m/n/10 gsubfn(pattern, replacement, x, backref, USE.NAMES = FALSE, i
+gnore.case = FALSE, env = parent.frame(), ...)[] 
+[14] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [15]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (274.78088pt too wide) in paragraph at lines 837--837
+ []\T1/fi4/m/n/10 locfdrFit(zz, bre = 120, df = 7, pct = 0, pct0 = 1/4, nulltyp
+e = 1, type = 0, plot = 1, mult, mlests, main = " ", sw = 0, verbose = T)[] 
+[16] [17] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [18]
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (38.0983pt too wide) in paragraph at lines 975--979
+[]\T1/ptm/m/n/10 The de-fault method is the same as \T1/fi4/m/n/10 match.fun \T
+1/ptm/m/n/10 and the \T1/fi4/m/n/10 formula \T1/ptm/m/n/10 method is the same a
+s \T1/fi4/m/n/10 as.function.formula\T1/ptm/m/n/10 .
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [19]
+Overfull \hbox (289.78088pt too wide) in paragraph at lines 1001--1001
+ []\T1/fi4/m/n/10 ostrapply(X, pattern, FUN = function(x, ...) x, ignore.case =
+ FALSE, ..., empty = NULL, simplify = FALSE, USE.NAMES = FALSE, combine = c)[] 
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def) [20]
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1065--1065
+ []\T1/fi4/m/n/10 plotExon(getRegionObject, ind = NULL, exonname = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1087--1088
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[21]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1132--1133
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1114.78088pt too wide) in paragraph at lines 1161--1161
+ []\T1/fi4/m/n/10 plotGene(getRegionObject, ind = NULL, genename = NULL, tstats
+, pos, annotation, counts, group, bppad = 50, axpad = 50, prettyskips = T, skip
+lines = T, countsheader = F, countssep = "\t", tabname = NULL, plotfile = NULL,
+ width = 900, height = 750, plottitle = NULL, chromosome, legendloc = "bottomle
+ft")[] 
+[22] [23]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1228--1229
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1004.78088pt too wide) in paragraph at lines 1257--1257
+ []\T1/fi4/m/n/10 plotRegion(getRegionObject, ind, tstats, pos, annotation, cou
+nts, group, bppad = 50, axpad = 50, prettyskips = T, skiplines = T, countsheade
+r = F, countssep = "\t", tabname = NULL, plotfile = NULL, width = 900, height =
+ 750, plottitle = NULL, chromosome, legendloc = "bottomleft")[] 
+[24]
+Overfull \hbox (32.67868pt too wide) in paragraph at lines 1276--1277
+\T1/ptm/m/n/10 tain a "name" col-umn list-ing the exon names. (The col-umn \T1/
+fi4/m/n/10 exon_id \T1/ptm/m/n/10 in a \T1/fi4/m/n/10 getAnnotation
+[25]
+Overfull \hbox (3.24759pt too wide) in paragraph at lines 1321--1322
+[]\T1/ptm/m/n/10 Can be one of "topright","bottomright","topleft",or "bot-tom-l
+eft" in-di-cat-ing where
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (494.78088pt too wide) in paragraph at lines 1346--1346
+ []\T1/fi4/m/n/10 read.csv.sql(file, sql = "select * from file", header = TRUE,
+ sep = ",", row.names, eol, skip, filter, nrows, field.types, comment.char, dbn
+ame = tempfile(), drv = "SQLite", ...)[] 
+[26] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (1319.78088pt too wide) in paragraph at lines 1420--1420
+ []\T1/fi4/m/n/10 sqldf(x, stringsAsFactors = FALSE, row.names = FALSE, envir =
+ parent.frame(), method = getOption("sqldf.method"), file.format = list(), dbna
+me, drv = getOption("sqldf.driver"), user, password = "", host = "localhost", p
+ort, dll = getOption("sqldf.dll"), connection = getOption("sqldf.connection"), 
+verbose = isTRUE(getOption("sqldf.verbose")))[] 
+[27] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (499.78088pt too wide) in paragraph at lines 1444--1444
+ []\T1/fi4/m/n/10 strapply(X, pattern, FUN = function(x, ...) x, backref = NULL
+, ..., empty = NULL, ignore.case = FALSE, perl = TRUE, engine = "R", simplify =
+ FALSE, USE.NAMES = FALSE, combine = c)[] 
+[28] (/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (90.78088pt too wide) in paragraph at lines 1548--1548
+ []\T1/fi4/m/n/9 mouse.exons = getAnnotation("mm10","refGene") #refGene appears
+ in printed output of supportedTables("mm10").[] 
+(./Rd2.ind [29]
+
+LaTeX Font Warning: Font shape `T1/fi4/m/it' undefined
+(Font)              using `T1/fi4/m/n' instead on input line 86.
+
+[30]) (./Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.paste} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Rfn.cat} has been referenced but does not exist, re
+placed by a fixed one
+
+{/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/tex
+live/2011/texmf-dist/fonts/enc/dvips/inconsolata/fi4-ec.enc}</usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/inconsolata/Inconsolata.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2011/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2011/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
+ype1/urw/times/utmr8a.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on Rd2.pdf (30 pages, 151738 bytes).
+Transcript written on Rd2.log.
+Saving output to 'tornado-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf /var/folders/77/3mxqtkh90yg57bj9j_ngmwvw0000gn/T//Rtmpq9Bc0P/Rd2pdf637618a6307'

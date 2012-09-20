@@ -1,0 +1,804 @@
+
+R version 2.14.1 (2011-12-22)
+Copyright (C) 2011 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "tornado"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('tornado')
+> 
+> assign(".oldSearch", search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("getAnnotation")
+> ### * getAnnotation
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getAnnotation
+> ### Title: download exon information for a given genome
+> ### Aliases: getAnnotation
+> 
+> ### ** Examples
+> 
+> mouse.exons <- getAnnotation("mm9","refGene")
+Loading required package: GenomicFeatures
+Warning: package ‘GenomicFeatures’ was built under R version 2.14.2
+Loading required package: IRanges
+
+Attaching package: ‘IRanges’
+
+The following object(s) are masked from ‘package:base’:
+
+    Map, cbind, eval, intersect, mapply, order, paste, pmax, pmax.int,
+    pmin, pmin.int, rbind, rep.int, setdiff, table, union
+
+Loading required package: GenomicRanges
+Loading required package: AnnotationDbi
+Warning: package ‘AnnotationDbi’ was built under R version 2.14.2
+Loading required package: Biobase
+
+Welcome to Bioconductor
+
+  Vignettes contain introductory material. To view, type
+  'browseVignettes()'. To cite Bioconductor, see
+  'citation("Biobase")' and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object(s) are masked from ‘package:IRanges’:
+
+    updateObject
+
+Loading required package: rtracklayer
+Loading required package: RCurl
+Loading required package: bitops
+Download the refGene table ... OK
+Download the refLink table ... OK
+Extract the 'transcripts' data frame ... OK
+Extract the 'splicings' data frame ... Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_183018: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_053270: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012625: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012624: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012623: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_029342: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001206926: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011633: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130175: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130174: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016918: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008653: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_147013: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_025576: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001160424: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_007640: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016901: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_144531: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_026601: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001033875: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001109684: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207223: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_177047: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011261: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001081232: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008712: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001122730: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_206935: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_007784: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_019494: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009838: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010646: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_053251: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207683: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001267707: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_130861: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_130877: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001101507: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008264: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_024470: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001105151: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010707: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001017985: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_028708: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011102: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008848: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177417: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177416: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009046: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001034893: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010115: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130693: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_181729: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001081390: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010039: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_029701: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001003951: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001033980: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_145834: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_032006: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001013813: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010952: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_134420: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001081960: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001114347: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001039944: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009859: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207664: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146872: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010974: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010313: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011022: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001122734: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001099920: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_023370: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_023115: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142746: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142737: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142760: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142735: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142739: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142742: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142741: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_181398: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177398: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177397: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177396: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001128086: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008753: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001190454: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001080933: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008850: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_025988: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008710: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001270812: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001017422: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_138674: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_027211: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016879: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001159419: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146993: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146484: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010846: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001031811: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010386: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010381: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011413: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001025208: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001267808: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_030104: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_153780: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_031156: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_144869: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_021466: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001270553: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011154: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001163415: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_018756: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009485: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_029975: the cds cumulative length is not a multiple of 3
+OK
+Download and preprocess the 'chrominfo' data frame ... OK
+Prepare the 'metadata' data frame ... OK
+Make the TranscriptDb object ... OK
+TranscriptDb object:
+| Db type: TranscriptDb
+| Data source: UCSC
+| Genome: mm9
+| Genus and Species: Mus musculus
+| UCSC Table: refGene
+| Resource URL: http://genome.ucsc.edu/
+| Type of Gene ID: Entrez Gene ID
+| Full dataset: yes
+| transcript_nrow: 30637
+| exon_nrow: 215468
+| cds_nrow: 194709
+| Db created by: GenomicFeatures package from Bioconductor
+| Creation time: 2012-09-05 12:47:34 -0400 (Wed, 05 Sep 2012)
+| GenomicFeatures version at creation time: 1.6.9
+| RSQLite version at creation time: 0.11.1
+| DBSCHEMAVERSION: 1.0
+| package: GenomicFeatures
+[1] "Labeling exons by gene..."
+> head(mouse.exons)
+       gene  chr    start      end width strand exon_id
+1 100009600 chr9 20866837 20867161   325      -  112472
+2 100009600 chr9 20867338 20867431    94      -  112473
+3 100009600 chr9 20867758 20867840    83      -  112474
+4 100009600 chr9 20870468 20870821   354      -  112475
+5 100009600 chr9 20871384 20871537   154      -  112476
+6 100009609 chr7 92088679 92089598   920      -   91427
+> 
+> 
+> 
+> cleanEx()
+
+detaching ‘package:rtracklayer’, ‘package:RCurl’, ‘package:bitops’,
+  ‘package:GenomicFeatures’, ‘package:AnnotationDbi’,
+  ‘package:Biobase’, ‘package:GenomicRanges’, ‘package:IRanges’
+
+> nameEx("getExons")
+> ### * getExons
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getExons
+> ### Title: find closest exon(s) to a genomic region
+> ### Aliases: getExons
+> 
+> ### ** Examples
+> 
+> ## not run:
+> exons = getAnnotation("hg19","knownGene")
+Loading required package: GenomicFeatures
+Warning: package ‘GenomicFeatures’ was built under R version 2.14.2
+Loading required package: IRanges
+
+Attaching package: ‘IRanges’
+
+The following object(s) are masked from ‘package:base’:
+
+    Map, cbind, eval, intersect, mapply, order, paste, pmax, pmax.int,
+    pmin, pmin.int, rbind, rep.int, setdiff, table, union
+
+Loading required package: GenomicRanges
+Loading required package: AnnotationDbi
+Warning: package ‘AnnotationDbi’ was built under R version 2.14.2
+Loading required package: Biobase
+
+Welcome to Bioconductor
+
+  Vignettes contain introductory material. To view, type
+  'browseVignettes()'. To cite Bioconductor, see
+  'citation("Biobase")' and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object(s) are masked from ‘package:IRanges’:
+
+    updateObject
+
+Loading required package: rtracklayer
+Loading required package: RCurl
+Loading required package: bitops
+Download the knownGene table ... OK
+Download the knownToLocusLink table ... OK
+Extract the 'transcripts' data frame ... OK
+Extract the 'splicings' data frame ... OK
+Download and preprocess the 'chrominfo' data frame ... OK
+Prepare the 'metadata' data frame ... OK
+Make the TranscriptDb object ... OK
+TranscriptDb object:
+| Db type: TranscriptDb
+| Data source: UCSC
+| Genome: hg19
+| Genus and Species: Homo sapiens
+| UCSC Table: knownGene
+| Resource URL: http://genome.ucsc.edu/
+| Type of Gene ID: Entrez Gene ID
+| Full dataset: yes
+| transcript_nrow: 80922
+| exon_nrow: 286852
+| cds_nrow: 235842
+| Db created by: GenomicFeatures package from Bioconductor
+| Creation time: 2012-09-05 12:49:40 -0400 (Wed, 05 Sep 2012)
+| GenomicFeatures version at creation time: 1.6.9
+| RSQLite version at creation time: 0.11.1
+| DBSCHEMAVERSION: 1.0
+| package: GenomicFeatures
+[1] "Labeling exons by gene..."
+> theRegion = c("chr22", 18216902, 18218350)
+> getExons(theRegion, exons)
+[1] "region overlaps annotated exon(s)"
+$region
+[1] "chr22"    "18216902" "18218350"
+
+$closestExons
+       gene   chr    start      end width strand exon_id
+189289  637 chr22 18216906 18218357  1452      -  268539
+
+> foo = getExons(theRegion, exons)
+[1] "region overlaps annotated exon(s)"
+> foo
+$region
+[1] "chr22"    "18216902" "18218350"
+
+$closestExons
+       gene   chr    start      end width strand exon_id
+189289  637 chr22 18216906 18218357  1452      -  268539
+
+> foo$closestExons
+       gene   chr    start      end width strand exon_id
+189289  637 chr22 18216906 18218357  1452      -  268539
+> 
+> 
+> 
+> cleanEx()
+
+detaching ‘package:rtracklayer’, ‘package:RCurl’, ‘package:bitops’,
+  ‘package:GenomicFeatures’, ‘package:AnnotationDbi’,
+  ‘package:Biobase’, ‘package:GenomicRanges’, ‘package:IRanges’
+
+> nameEx("getLimmaInput")
+> ### * getLimmaInput
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: getLimmaInput
+> ### Title: fit a linear model to each nucleotide
+> ### Aliases: getLimmaInput
+> 
+> ### ** Examples
+> 
+> ## add example here when we have a vignette
+> 
+> 
+> 
+> cleanEx()
+> nameEx("last")
+> ### * last
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: last
+> ### Title: get the last element
+> ### Aliases: last
+> 
+> ### ** Examples
+> 
+> x = c(1:20)
+> last(x) #returns 20
+[1] 20
+> 
+> 
+> 
+> cleanEx()
+> nameEx("supportedTables")
+> ### * supportedTables
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: supportedTables
+> ### Title: print list of supported (downloadable) tables for a given genome
+> ### Aliases: supportedTables
+> 
+> ### ** Examples
+> 
+> supportedTables("mm10")
+getting supported tables. may take several minutes.
+Loading required package: GenomicFeatures
+Warning: package ‘GenomicFeatures’ was built under R version 2.14.2
+Loading required package: IRanges
+
+Attaching package: ‘IRanges’
+
+The following object(s) are masked from ‘package:base’:
+
+    Map, cbind, eval, intersect, mapply, order, paste, pmax, pmax.int,
+    pmin, pmin.int, rbind, rep.int, setdiff, table, union
+
+Loading required package: GenomicRanges
+Loading required package: AnnotationDbi
+Warning: package ‘AnnotationDbi’ was built under R version 2.14.2
+Loading required package: Biobase
+
+Welcome to Bioconductor
+
+  Vignettes contain introductory material. To view, type
+  'browseVignettes()'. To cite Bioconductor, see
+  'citation("Biobase")' and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object(s) are masked from ‘package:IRanges’:
+
+    updateObject
+
+[1] "ccdsGene"    "ensGene"     "genscan"     "xenoRefGene" "refGene"    
+> mouse.exons = getAnnotation("mm10","refGene") #refGene appears in printed output of supportedTables("mm10").
+Loading required package: rtracklayer
+Loading required package: RCurl
+Loading required package: bitops
+Download the refGene table ... OK
+Download the refLink table ... OK
+Extract the 'transcripts' data frame ... OK
+Extract the 'splicings' data frame ... Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_053270: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_183018: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012625: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012624: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012623: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001012623: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130175: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130174: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001206926: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_021466: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_148413: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016918: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_147013: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_025576: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008653: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001160424: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_175515: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_007640: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016901: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_026601: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001033875: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001109684: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_144531: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207223: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009485: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011261: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_177047: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001033460: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_019494: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_026486: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011596: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009838: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_053251: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010646: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207683: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_130877: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_017478: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008264: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_024470: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010707: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_028708: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008848: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177416: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177417: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001105151: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009046: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001034893: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010115: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001130693: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_181729: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_030254: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_178633: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010039: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001033980: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_145834: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001013813: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_032006: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009859: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001114347: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001081960: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_207664: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146872: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010974: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010952: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010313: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_134420: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001163415: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011154: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_177914: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011022: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001122734: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001099920: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_133362: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_023115: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142742: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142760: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142741: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142739: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142746: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142735: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001142737: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001128086: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_023370: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177396: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_181398: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177398: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001177397: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001190454: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008753: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008850: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001080933: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_025988: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_053122: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_008710: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_177135: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001017422: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_009268: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_138674: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_016879: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_198024: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_027211: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001159419: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146993: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_146484: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010846: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010386: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_010381: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_011413: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_001267808: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_030104: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_144869: the cds cumulative length is not a multiple of 3
+Warning in .extractUCSCCdsStartEnd(cdsStart[i], cdsEnd[i], exon_locs$start[[i]],  :
+  UCSC data anomaly in transcript NM_031156: the cds cumulative length is not a multiple of 3
+OK
+Download and preprocess the 'chrominfo' data frame ... OK
+Prepare the 'metadata' data frame ... OK
+Make the TranscriptDb object ... OK
+TranscriptDb object:
+| Db type: TranscriptDb
+| Data source: UCSC
+| Genome: mm10
+| Genus and Species: Mus musculus
+| UCSC Table: refGene
+| Resource URL: http://genome.ucsc.edu/
+| Type of Gene ID: Entrez Gene ID
+| Full dataset: yes
+| transcript_nrow: 30635
+| exon_nrow: 215576
+| cds_nrow: 194619
+| Db created by: GenomicFeatures package from Bioconductor
+| Creation time: 2012-09-05 12:53:38 -0400 (Wed, 05 Sep 2012)
+| GenomicFeatures version at creation time: 1.6.9
+| RSQLite version at creation time: 0.11.1
+| DBSCHEMAVERSION: 1.0
+| package: GenomicFeatures
+[1] "Labeling exons by gene..."
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  163.455 10.105 496.904 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

@@ -1,0 +1,29 @@
+find.mean               optional helper function for getParams
+find.mean.down          helper function for getParams
+find.mean.up            helper function for getParams
+find.sd                 helper function for getParams
+get.numalts             helper function for getParams
+getAnnotation           download exon information for a given genome
+getExons                find closest exon(s) to a genomic region
+getLimmaInput           fit a linear model to each nucleotide
+getParams               calculate parameters to use as input for HMM
+getParams.failsafe      helper function for getParams
+getRegions              generate list of regions, classify each as
+                        differentially expressed or not
+getTstats               calculate moderated t statistic for each
+                        nucleotide
+gsubfn                  helper function for read.csv.sql
+last                    get the last element
+locfdrFit               modified version of Efron's locfdr
+makeDb                  create SQLite database from text file
+match.funfn             Generic extended version of R match.fun
+ostrapply               helper function for read.csv.sql
+plotExon                plot pipeline data/results for a given exon
+plotGene                plot pipeline data/results for a given gene
+plotRegion              plot pipeline data/results for a given region
+read.csv.sql            main workhorse of makeDb
+sqldf                   helper function for read.csv.sql
+strapply                helper function for read.csv.sql
+supportedTables         print list of supported (downloadable) tables
+                        for a given genome
+tornado-package         Tornado

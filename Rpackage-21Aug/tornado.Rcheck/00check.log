@@ -1,0 +1,109 @@
+* using log directory ‘/Users/alyssafrazee/Documents/hopkins/research/_readlets/tornado/Rpackage-21Aug/tornado.Rcheck’
+* using R version 2.14.1 (2011-12-22)
+* using platform: x86_64-apple-darwin9.8.0 (64-bit)
+* using session charset: UTF-8
+* checking for file ‘tornado/DESCRIPTION’ ... OK
+* checking extension type ... Package
+* this is package ‘tornado’ version ‘1.0’
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking whether package ‘tornado’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking DESCRIPTION meta-information ... WARNING
+Non-standard license specification:
+  None yet.
+Standardizable: FALSE
+* checking top-level files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking for unstated dependencies in R code ... WARNING
+‘::’ or ‘:::’ import not declared from: ‘IRanges’
+‘library’ or ‘require’ calls not declared from:
+  ‘DBI’ ‘DNAcopy’ ‘GenomicFeatures’ ‘Genominator’ ‘HiddenMarkov’
+  ‘RSQLite’ ‘RSQLite.extfuns’ ‘chron’ ‘limma’ ‘locfdr’ ‘multicore’
+  ‘proto’ ‘rtracklayer’ ‘splines’
+See the information on DESCRIPTION files in the chapter ‘Creating R
+packages’ of the ‘Writing R Extensions’ manual.
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... NOTE
+getAnnotation: no visible global function definition for
+  ‘makeTranscriptDbFromUCSC’
+getAnnotation: no visible global function definition for ‘exonsBy’
+getAnnotation: no visible global function definition for ‘id2name’
+getLimmaInput: no visible global function definition for ‘ExpData’
+getLimmaInput: no visible binding for global variable ‘med’
+getLimmaInput : lmFit.apply: no visible global function definition for
+  ‘lmFit’
+getRegions: no visible global function definition for ‘dthmm’
+getRegions: no visible global function definition for ‘Viterbi’
+getRegions: no visible global function definition for ‘CNA’
+getRegions: no visible global function definition for ‘smooth.CNA’
+getRegions: no visible global function definition for ‘segment’
+getTstats: no visible global function definition for ‘trigammaInverse’
+getTstats: no visible global function definition for ‘ns’
+locfdrFit: no visible global function definition for ‘ns’
+locfdrFit: no visible global function definition for ‘locmle’
+locfdrFit: no visible global function definition for ‘loccov2’
+match.funfn: no visible global function definition for
+  ‘as.function.formula’
+ostrapply: no visible global function definition for ‘is.proto’
+ostrapply: no visible global function definition for ‘proto’
+plotExon: no visible global function definition for ‘ExpData’
+plotGene: no visible global function definition for ‘ExpData’
+plotRegion: no visible global function definition for ‘ExpData’
+read.csv.sql: no visible global function definition for ‘proto’
+read.csv.sql: no visible binding for global variable ‘proto’
+sqldf: no visible global function definition for ‘dbDisconnect’
+sqldf: no visible global function definition for ‘dbRemoveTable’
+sqldf: no visible global function definition for ‘dbDriver’
+sqldf: no visible global function definition for ‘dbConnect’
+sqldf: no visible global function definition for ‘dbGetQuery’
+sqldf: no visible global function definition for ‘init_extensions’
+sqldf: no visible global function definition for ‘strapplyc’
+sqldf: no visible global function definition for ‘dbExistsTable’
+sqldf: no visible global function definition for ‘dbWriteTable’
+sqldf: no visible global function definition for ‘dbSendUpdate’
+strapply: no visible global function definition for ‘is.proto’
+strapply : ff: no visible global function definition for ‘strapply1’
+supportedTables: no visible global function definition for
+  ‘supportedUCSCFeatureDbTracks’
+supportedTables: no visible global function definition for
+  ‘supportedUCSCtables’
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'sqldf'
+  ‘x’ ‘stringsAsFactors’ ‘row.names’ ‘envir’ ‘method’ ‘file.format’
+  ‘dbname’ ‘drv’ ‘user’ ‘password’ ‘host’ ‘port’ ‘dll’ ‘connection’
+  ‘verbose’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See the chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking examples ... OK
+* checking PDF version of manual ... OK
+WARNING: There were 3 warnings, see
+  ‘/Users/alyssafrazee/Documents/hopkins/research/_readlets/tornado/Rpackage-21Aug/tornado.Rcheck/00check.log’
+for details
